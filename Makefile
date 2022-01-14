@@ -13,6 +13,8 @@ SUBMODULES      += https://github.com/zsh-users/zsh-autosuggestions
 SUBMODULES      += https://github.com/junegunn/vim-plug
 SUBMODULES      += https://github.com/romainl/Apprentice
 
+SSH_KEY_PATH    := $(shell grep IdentityFile .ssh/config | sed 's/IdentityFile //g')
+
 .DEFAULT_GOAL   := help
 
 all:
@@ -49,3 +51,10 @@ clone: ## Clone subordinate git modules
 
 unclone: ## Remove all cloned subordinate git modules
 	@cd .submodules; rm -rf *
+
+keygen: ## Generate ssh key automatically according to '.ssh/config'
+	@$(foreach val, $(SSH_KEY_PATH), \
+        test -f $(val) || ( \
+            mkdir -p $(dir $(val)); ssh-keygen -b 4096 -t ed25519 -N '' -C 'shqld@$(shell hostname)' -f $(val) \
+        ); \
+    )
