@@ -1,6 +1,8 @@
 # Copyright (c) 2021- shqld All Rights Reserved.
 # https://github.com/shqld/dotfiles/blob/master/Makefile
 
+XARGS           := xargs -P$(shell nproc)
+
 DOTPATH         := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES      := $(wildcard .??*) Library
 EXCLUSIONS      := .DS_Store .git .gitignore .make .submodules
@@ -30,15 +32,15 @@ list: ## Show dot files in this repo
 	@$(foreach val, $(DOTFILES), ls -dF $(val);)
 
 link: ## Create symlinks to home directory
-	@-$(foreach val, $(DOTFILES), find $(val) -type d | xargs -I{} mkdir $(HOME)/{};) # Always parent dirs come first via 'find'
+	@-$(foreach val, $(DOTFILES), find $(val) -type d | $(XARGS) -I{} mkdir $(HOME)/{};) # Always parent dirs come first via 'find'
     # Only files or symlinks, not to overwrite existing directories (e.g. '.ssh', '.config')
-	@$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | xargs -I{} ln -sfnv $(abspath {}) $(HOME)/{};)
+	@$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | $(XARGS) -I{} ln -sfnv $(abspath {}) $(HOME)/{};)
 
 unlink: ## Remove all symlinks for the dot files
     # Only files or symlinks, not to remove other files in the directories
-	@-$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | xargs -I{} rm -v $(HOME)/{};)
+	@-$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | $(XARGS) -I{} rm -v $(HOME)/{};)
     # Remove empty directories
-	@-$(foreach val, $(DOTFILES), find $(val) -type d | xargs -I{} rm -vd $(HOME)/{};)
+	@-$(foreach val, $(DOTFILES), find $(val) -type d | $(XARGS) -I{} rm -vd $(HOME)/{};)
 
 install: ## Install Homebrew dependencies listed from the Brewfile
 	@which -s brew || (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash)
@@ -49,7 +51,7 @@ uninstall: ## Uninstall Homebrew dependencies not listed from the Brewfile
 	@brew bundle cleanup --file=$(DOTPATH)/Brewfile
 
 clone: ## Clone subordinate git modules
-	@-cd .submodules; echo $(SUBMODULES) | xargs -n1 git clone --depth 1
+	@-cd .submodules; echo $(SUBMODULES) | $(XARGS) -n1 git clone --depth 1
 
 unclone: ## Remove all cloned subordinate git modules
 	@cd .submodules; rm -rf *
@@ -65,7 +67,7 @@ setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat ##
 
 setup.vscode: install
     ## Install VSCode extensions listed vscode_extensions.txt
-	@-xargs -n1 code --install-extension < vscode_extensions.txt
+	@-$(XARGS) -n1 code --install-extension < vscode_extensions.txt
 
 setup.vim: link clone
     ## Install plugins for plug.vim https://github.com/junegunn/vim-plug
