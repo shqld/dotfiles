@@ -78,3 +78,8 @@ setup.node: install
 	@mkdir -p $(HOME)/.nodebrew/src
 	@nodebrew install-binary latest
 	@nodebrew use latest
+
+setup.chsh: install
+    ## Change default shell for the current user to zsh
+	@grep -q $(shell which zsh) /etc/shells || echo $(shell which zsh) | sudo tee -a /etc/shells
+	@finger $(shell whoami) | grep -q "Shell: $(shell which zsh)" || chsh -s $(shell which zsh)
