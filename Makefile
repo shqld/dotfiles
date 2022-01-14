@@ -64,3 +64,7 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
 setup.vscode: install
     ## Install VSCode extensions listed vscode_extensions.txt
 	@-xargs -n1 code --install-extension < vscode_extensions.txt
+
+setup.vim: link clone
+    ## Install plugins for plug.vim https://github.com/junegunn/vim-plug
+	@vim +'PlugInstall --sync' +qa # https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
