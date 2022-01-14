@@ -72,3 +72,9 @@ setup.vim: link clone
 setup.fzf: install link
     ## Install fzf keybindings and completion https://github.com/junegunn/fzf#using-homebrew
 	@$(shell brew --prefix)/opt/fzf/install --all --no-bash --no-fish
+
+setup.node: install
+    ## Install node@latest via nodebrew
+	@mkdir -p $(HOME)/.nodebrew/src
+	@nodebrew install-binary latest
+	@nodebrew use latest
