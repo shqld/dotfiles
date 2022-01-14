@@ -25,3 +25,8 @@ unlink: ## Remove all symlinks for the dot files
 	@-$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | xargs -I{} rm -v $(HOME)/{};)
     # Remove empty directories
 	@-$(foreach val, $(DOTFILES), find $(val) -type d | xargs -I{} rm -vd $(HOME)/{};)
+
+install: ## Install Homebrew dependencies listed from the Brewfile
+	@which -s brew || (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash)
+	@brew bundle install --file=$(DOTPATH)/Brewfile
+	@brew bundle dump --force --file=$(DOTPATH)/Brewfile
