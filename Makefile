@@ -30,3 +30,6 @@ install: ## Install Homebrew dependencies listed from the Brewfile
 	@which -s brew || (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash)
 	@brew bundle install --file=$(DOTPATH)/Brewfile
 	@brew bundle dump --force --file=$(DOTPATH)/Brewfile
+
+uninstall: ## Uninstall Homebrew dependencies not listed from the Brewfile
+	@brew bundle cleanup --file=$(DOTPATH)/Brewfile
