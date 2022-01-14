@@ -60,3 +60,7 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
             mkdir -p $(dir $(val)); ssh-keygen -b 4096 -t ed25519 -N '' -C 'shqld@$(shell hostname)' -f $(val) \
         ); \
     )
+
+setup.vscode: install
+    ## Install VSCode extensions listed vscode_extensions.txt
+	@-xargs -n1 code --install-extension < vscode_extensions.txt
