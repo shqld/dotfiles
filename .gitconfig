@@ -1,0 +1,48 @@
+[core]
+excludesfile = ~/.gitignore
+
+[user]
+	name = Sho Miyamoto
+	email = me@shqld.dev
+
+[alias]
+	rb = rebase
+	rbi = rebase -i
+	pl = pull
+	plr = pull --rebase
+	co = checkout
+	br = branch
+	cm = commit
+	st = status
+  pr = pull-request
+	
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[color]
+ui = auto
+
+[pull]
+# rebase = true
+rebase = false
+
+[hub]
+	protocol = ssh
+
+[diff]
+compactionHeuristic = true
+
+[push]
+	default = current
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
+
+[http]
+	cookiefile = ~/.gitcookies
