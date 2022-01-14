@@ -6,6 +6,13 @@ CANDIDATES      := $(wildcard .??*) Library
 EXCLUSIONS      := .DS_Store .git .gitignore .make .submodules
 DOTFILES        := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
+SUBMODULES      := https://github.com/zsh-users/zsh-syntax-highlighting
+SUBMODULES      += https://github.com/b4b4r07/enhancd
+SUBMODULES      += https://github.com/romkatv/gitstatus
+SUBMODULES      += https://github.com/zsh-users/zsh-autosuggestions
+SUBMODULES      += https://github.com/junegunn/vim-plug
+SUBMODULES      += https://github.com/romainl/Apprentice
+
 .DEFAULT_GOAL   := help
 
 all:
@@ -33,3 +40,6 @@ install: ## Install Homebrew dependencies listed from the Brewfile
 
 uninstall: ## Uninstall Homebrew dependencies not listed from the Brewfile
 	@brew bundle cleanup --file=$(DOTPATH)/Brewfile
+
+clone: ## Clone subordinate git modules
+	@-cd .submodules; echo $(SUBMODULES) | xargs -n1 git clone --depth 1
