@@ -19,3 +19,9 @@ link: ## Create symlinks to home directory
 	@-$(foreach val, $(DOTFILES), find $(val) -type d | xargs -I{} mkdir $(HOME)/{};) # Always parent dirs come first via 'find'
     # Only files or symlinks, not to overwrite existing directories (e.g. '.ssh', '.config')
 	@$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | xargs -I{} ln -sfnv $(abspath {}) $(HOME)/{};)
+
+unlink: ## Remove all symlinks for the dot files
+    # Only files or symlinks, not to remove other files in the directories
+	@-$(foreach val, $(DOTFILES), find $(val) -type f -o -type l | xargs -I{} rm -v $(HOME)/{};)
+    # Remove empty directories
+	@-$(foreach val, $(DOTFILES), find $(val) -type d | xargs -I{} rm -vd $(HOME)/{};)
