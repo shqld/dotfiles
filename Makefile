@@ -18,7 +18,7 @@ SSH_KEY_PATH    := $(shell grep IdentityFile .ssh/config | sed 's/IdentityFile /
 .DEFAULT_GOAL   := help
 
 all:
-init: link install clone ## Initialize the environment
+init: link install clone setup ## Initialize the environment
 clean: unlink uninstall unclone ## Remove the dot files and this repo
 
 help: ## Self-documented Makefile
@@ -60,6 +60,8 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
             mkdir -p $(dir $(val)); ssh-keygen -b 4096 -t ed25519 -N '' -C 'shqld@$(shell hostname)' -f $(val) \
         ); \
     )
+
+setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat ## Setup miscellaneous
 
 setup.vscode: install
     ## Install VSCode extensions listed vscode_extensions.txt
