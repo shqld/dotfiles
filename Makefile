@@ -43,3 +43,6 @@ uninstall: ## Uninstall Homebrew dependencies not listed from the Brewfile
 
 clone: ## Clone subordinate git modules
 	@-cd .submodules; echo $(SUBMODULES) | xargs -n1 git clone --depth 1
+
+unclone: ## Remove all cloned subordinate git modules
+	@cd .submodules; rm -rf *
