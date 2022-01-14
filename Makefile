@@ -18,6 +18,8 @@ SSH_KEY_PATH    := $(shell grep IdentityFile .ssh/config | sed 's/IdentityFile /
 .DEFAULT_GOAL   := help
 
 all:
+init: link install clone ## Initialize the environment
+clean: unlink uninstall unclone ## Remove the dot files and this repo
 
 help: ## Self-documented Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
