@@ -68,3 +68,7 @@ setup.vscode: install
 setup.vim: link clone
     ## Install plugins for plug.vim https://github.com/junegunn/vim-plug
 	@vim +'PlugInstall --sync' +qa # https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
+
+setup.fzf: install link
+    ## Install fzf keybindings and completion https://github.com/junegunn/fzf#using-homebrew
+	@$(shell brew --prefix)/opt/fzf/install --all --no-bash --no-fish
