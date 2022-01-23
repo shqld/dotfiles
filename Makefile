@@ -5,15 +5,15 @@ XARGS           := xargs -P$(shell nproc)
 
 DOTPATH         := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES      := $(wildcard .??*) Library
-EXCLUSIONS      := .DS_Store .git .gitignore .make .submodules
+EXCLUSIONS      := .DS_Store .git .gitignore .make .deps
 DOTFILES        := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
-SUBMODULES      := https://github.com/zsh-users/zsh-syntax-highlighting
-SUBMODULES      += https://github.com/b4b4r07/enhancd
-SUBMODULES      += https://github.com/romkatv/gitstatus
-SUBMODULES      += https://github.com/zsh-users/zsh-autosuggestions
-SUBMODULES      += https://github.com/junegunn/vim-plug
-SUBMODULES      += https://github.com/romainl/Apprentice
+DEPENDENCIES      := https://github.com/zsh-users/zsh-syntax-highlighting
+DEPENDENCIES      += https://github.com/b4b4r07/enhancd
+DEPENDENCIES      += https://github.com/romkatv/gitstatus
+DEPENDENCIES      += https://github.com/zsh-users/zsh-autosuggestions
+DEPENDENCIES      += https://github.com/junegunn/vim-plug
+DEPENDENCIES      += https://github.com/romainl/Apprentice
 
 SSH_KEY_PATH    := $(shell grep IdentityFile .ssh/config | sed 's/IdentityFile //g')
 
@@ -51,10 +51,10 @@ uninstall: ## Uninstall Homebrew dependencies not listed from the Brewfile
 	@brew bundle cleanup --file=$(DOTPATH)/Brewfile
 
 clone: ## Clone subordinate git modules
-	@-cd .submodules; echo $(SUBMODULES) | $(XARGS) -n1 git clone --depth 1
+	@-cd .deps; echo $(DEPENDENCIES) | $(XARGS) -n1 git clone --depth 1
 
 unclone: ## Remove all cloned subordinate git modules
-	@cd .submodules; rm -rf *
+	@cd .deps; rm -rf *
 
 keygen: ## Generate ssh key automatically according to '.ssh/config'
 	@$(foreach val, $(SSH_KEY_PATH), \
