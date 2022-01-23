@@ -65,31 +65,25 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
 
 setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat ## Setup miscellaneous
 
-setup.vscode: install
-    ## Install VSCode extensions listed vscode_extensions.txt
+setup.vscode: install ## Install VSCode extensions listed vscode_extensions.txt
 	@-$(XARGS) -n1 code --install-extension < vscode_extensions.txt
 
-setup.vim: link clone
-    ## Install plugins for plug.vim https://github.com/junegunn/vim-plug
+setup.vim: link clone ## Install plugins for plug.vim https://github.com/junegunn/vim-plug
 	@vim +'PlugInstall --sync' +qa # https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
 
-setup.fzf: install link
-    ## Install fzf keybindings and completion https://github.com/junegunn/fzf#using-homebrew
+setup.fzf: install link ## Install fzf keybindings and completion https://github.com/junegunn/fzf#using-homebrew
 	@$(shell brew --prefix)/opt/fzf/install --all --no-bash --no-fish
 
-setup.node: install
-    ## Install node@latest via nodebrew
+setup.node: install ## Install node@latest via nodebrew
 	@mkdir -p $(HOME)/.nodebrew/src
 	@nodebrew install-binary latest
 	@nodebrew use latest
 
-setup.chsh: install
-    ## Change default shell for the current user to zsh
+setup.chsh: install ## Change default shell for the current user to zsh
 	@grep -q $(shell which zsh) /etc/shells || echo $(shell which zsh) | sudo tee -a /etc/shells
 	@finger $(shell whoami) | grep -q "Shell: $(shell which zsh)" || chsh -s $(shell which zsh)
 
-setup.keyrepeat:
-    ## Enable key repeating in vscode https://github.com/VSCodeVim/Vim/blob/2da276357ddfe6fba3640b04b05113bd3e66156b/README.md#mac
+setup.keyrepeat: ## Enable key repeating in vscode https://github.com/VSCodeVim/Vim/blob/2da276357ddfe6fba3640b04b05113bd3e66156b/README.md#mac
 	@defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false # For VS Code
 	@defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
 	@defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false # For VS Codium
