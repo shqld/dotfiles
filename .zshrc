@@ -2,7 +2,7 @@
 # GLOBAL BIN PATH
 # -----------------------------------------------------
 
-export GOPATH=$HOME/projects/go
+export GOPATH=$HOME
 export KTROOT=$HOME/.kotlin
 
 export PATH=/opt/homebrew/bin:$PATH
@@ -40,6 +40,8 @@ alias lla='ls -la'
 
 alias pbp='pbpaste'
 alias pbc='pbcopy'
+
+alias qurl='docker run -it --rm ymuski/curl-http3 curl'
 
 alias tf='terraform'
 
