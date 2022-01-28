@@ -204,6 +204,9 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
     "C_Cpp.updateChannel": "Insiders",
     "cmake.configureOnOpen": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -244,6 +247,5 @@
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
-    "window.zoomLevel": 1,
-    "workbench.panel.defaultLocation": "right"
+    "window.zoomLevel": 1
 }
