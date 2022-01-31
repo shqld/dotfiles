@@ -46,10 +46,12 @@ brew "percona-toolkit"
 brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
+brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "rust"
 brew "rustup-init"
 brew "shellcheck"
+brew "telnet"
 brew "terraform"
 brew "tig"
 brew "tldr"
@@ -73,10 +75,11 @@ cask "firefox-developer-edition"
 cask "firefox-nightly"
 cask "google-chrome"
 cask "google-chrome-canary"
-cask "iterm2"
+cask "insomnia"
 cask "karabiner-elements"
 cask "monitorcontrol"
 cask "obsidian"
+cask "postman"
 cask "raindropio"
 cask "raycast"
 cask "rectangle"
@@ -91,4 +94,5 @@ mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Typist", id: 415166115
 mas "Xcode", id: 497799835
