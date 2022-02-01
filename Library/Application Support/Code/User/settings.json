@@ -247,5 +247,6 @@
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
+    "workbench.panel.defaultLocation": "right",
     "window.zoomLevel": 1
 }
