@@ -148,3 +148,5 @@ RPROMPT='${vcs_info_msg_0_}'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
+
+eval "$(starship init zsh)"
