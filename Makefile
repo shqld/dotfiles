@@ -8,6 +8,10 @@ CANDIDATES      := $(wildcard .??*) Library
 EXCLUSIONS      := .DS_Store .git .gitignore .make .deps
 DOTFILES        := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
+define make_TEMPDIR
+	@$(eval TEMPDIR := $(shell mktemp -d))
+endef
+
 DEPENDENCIES      := https://github.com/zsh-users/zsh-syntax-highlighting
 DEPENDENCIES      += https://github.com/b4b4r07/enhancd
 DEPENDENCIES      += https://github.com/romkatv/gitstatus
@@ -63,7 +67,7 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
         ); \
     )
 
-setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat ## Setup miscellaneous
+setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat setup.nerdfonts ## Setup miscellaneous
 
 setup.vscode: install ## Install VSCode extensions listed vscode_extensions.txt
 	@-$(XARGS) -n1 code --install-extension < vscode_extensions.txt
@@ -88,3 +92,9 @@ setup.keyrepeat: ## Enable key repeating in vscode https://github.com/VSCodeVim/
 	@defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
 	@defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false # For VS Codium
     # @defaults delete -g ApplePressAndHoldEnabled # If necessary, reset global default
+
+setup.nerdfonts: ## Install nerd fonts
+	@$(make_TEMPDIR)
+	@git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts $(TEMPDIR)
+	$(TEMPDIR)/install.sh
+	@rm -rf $(TEPDIR);
