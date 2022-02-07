@@ -63,7 +63,7 @@ keygen: ## Generate ssh key automatically according to '.ssh/config'
         ); \
     )
 
-setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat ## Setup miscellaneous
+setup: setup.vscode setup.vim setup.fzf setup.node setup.chsh setup.keyrepeat setup.rust ## Setup miscellaneous
 
 setup.vscode: install ## Install VSCode extensions listed vscode_extensions.txt
 	@-$(XARGS) -n1 code --install-extension < vscode_extensions.txt
@@ -88,3 +88,6 @@ setup.keyrepeat: ## Enable key repeating in vscode https://github.com/VSCodeVim/
 	@defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
 	@defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false # For VS Codium
     # @defaults delete -g ApplePressAndHoldEnabled # If necessary, reset global default
+
+setup.rust: ## Init rustup
+	@rustup-init -y
