@@ -101,6 +101,8 @@ eval "$(pyenv init -)"
 # eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
+source "$HOME/.cargo/env"
+
 # =====================================================
 # ZSH CONFIG
 # -----------------------------------------------------
