@@ -207,6 +207,9 @@
     "[go]": {
         "editor.defaultFormatter": "golang.go"
     },
+    "[rust]": {
+        "editor.defaultFormatter": "matklad.rust-analyzer"
+    },
     "C_Cpp.updateChannel": "Insiders",
     "cmake.configureOnOpen": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
