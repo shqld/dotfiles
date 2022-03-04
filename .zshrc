@@ -98,7 +98,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
-# eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 source "$HOME/.cargo/env"
@@ -149,6 +148,3 @@ RPROMPT='${vcs_info_msg_0_}'
 # fzf 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-
-
-eval "$(starship init zsh)"
