@@ -1,139 +1,146 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
-      "key": "shift+cmd+g",
-      "command": "workbench.view.scm",
-      "when": "gitlens:enabled && gitlens:keymap == 'chorded'"
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm",
+        "when": "gitlens:enabled && gitlens:keymap == 'chorded'"
     },
     {
-      "key": "ctrl+shift+g g",
-      "command": "-workbench.view.scm",
-      "when": "gitlens:enabled && gitlens:keymap == 'chorded'"
+        "key": "ctrl+shift+g g",
+        "command": "-workbench.view.scm",
+        "when": "gitlens:enabled && gitlens:keymap == 'chorded'"
     },
     {
-      "key": "shift+cmd+g",
-      "command": "-workbench.action.terminal.findPreviousTerminalFocus",
-      "when": "terminalFocus"
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPreviousTerminalFocus",
+        "when": "terminalFocus"
     },
     {
-      "key": "shift+cmd+g",
-      "command": "workbench.view.scm"
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm"
     },
     {
-      "key": "ctrl+shift+g",
-      "command": "-workbench.view.scm"
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
     },
     {
-      "key": "ctrl+j",
-      "command": "-editor.action.joinLines",
-      "when": "editorTextFocus && !editorReadonly"
+        "key": "ctrl+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "key": "ctrl+j",
-      "command": "-extension.vim_ctrl+j",
-      "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+        "key": "ctrl+j",
+        "command": "-extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
     },
     {
-      "key": "cmd+\\",
-      "command": "workbench.action.debug.continue",
-      "when": "inDebugMode"
+        "key": "cmd+\\",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
     },
     {
-      "key": "f5",
-      "command": "-workbench.action.debug.continue",
-      "when": "inDebugMode"
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "inDebugMode"
     },
     {
-      "key": "cmd+'",
-      "command": "workbench.action.debug.stepOver",
-      "when": "debugState == 'stopped'"
+        "key": "cmd+'",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
     },
     {
-      "key": "f10",
-      "command": "-workbench.action.debug.stepOver",
-      "when": "debugState == 'stopped'"
+        "key": "f10",
+        "command": "-workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
     },
     {
-      "key": "cmd+;",
-      "command": "workbench.action.debug.stepInto",
-      "when": "inDebugMode"
+        "key": "cmd+;",
+        "command": "workbench.action.debug.stepInto",
+        "when": "inDebugMode"
     },
     {
-      "key": "f11",
-      "command": "-workbench.action.debug.stepInto",
-      "when": "inDebugMode"
+        "key": "f11",
+        "command": "-workbench.action.debug.stepInto",
+        "when": "inDebugMode"
     },
     {
-      "key": "shift+cmd+;",
-      "command": "workbench.action.debug.stepOut",
-      "when": "debugState == 'stopped'"
+        "key": "shift+cmd+;",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
     },
     {
-      "key": "shift+f11",
-      "command": "-workbench.action.debug.stepOut",
-      "when": "debugState == 'stopped'"
+        "key": "shift+f11",
+        "command": "-workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
     },
     {
-      "key": "cmd+k cmd+i",
-      "command": "-editor.debug.action.showDebugHover",
-      "when": "editorTextFocus && inDebugMode"
+        "key": "cmd+k cmd+i",
+        "command": "-editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
     },
     {
-      "key": "cmd+e",
-      "command": "-actions.findWithSelection"
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
     },
     {
-      "key": "cmd+e",
-      "command": "-actions.findWithSelection"
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
     },
     {
-      "key": "cmd+e",
-      "command": "editor.action.showHover",
-      "when": "editorTextFocus"
+        "key": "cmd+e",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-      "key": "cmd+k cmd+i",
-      "command": "-editor.action.showHover",
-      "when": "editorTextFocus"
+        "key": "cmd+k cmd+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-      "key": "cmd+k cmd+i",
-      "command": "-editor.action.showHover",
-      "when": "editorTextFocus"
+        "key": "cmd+k cmd+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
     },
     {
-      "key": "cmd+e",
-      "command": "-actions.findWithSelection"
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
     },
     {
-      "key": "shift+cmd+r",
-      "command": "editor.action.revealDefinition",
-      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        "key": "shift+cmd+r",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-      "key": "f12",
-      "command": "-editor.action.revealDefinition",
-      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-      "key": "shift+cmd+r",
-      "command": "-rerunSearchEditorSearch",
-      "when": "inSearchEditor"
+        "key": "shift+cmd+r",
+        "command": "-rerunSearchEditorSearch",
+        "when": "inSearchEditor"
     },
     {
-      "key": "shift+cmd+r",
-      "command": "-rerunSearchEditorSearch",
-      "when": "inSearchEditor"
+        "key": "shift+cmd+r",
+        "command": "-rerunSearchEditorSearch",
+        "when": "inSearchEditor"
     },
     {
-      "key": "ctrl+shift+cmd+r",
-      "command": "references-view.prev",
-      "when": "reference-list.hasResult"
+        "key": "ctrl+shift+cmd+r",
+        "command": "references-view.prev",
+        "when": "reference-list.hasResult"
     },
     {
-      "key": "shift+f4",
-      "command": "-references-view.prev",
-      "when": "reference-list.hasResult"
+        "key": "shift+f4",
+        "command": "-references-view.prev",
+        "when": "reference-list.hasResult"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel"
     }
-  ]
-  
+]
