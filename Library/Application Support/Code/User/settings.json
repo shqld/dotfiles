@@ -15,7 +15,6 @@
     "prettier.trailingComma": "es5",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.colorTheme": "Subliminal",
-    "workbench.sideBar.location": "right",
     "editor.tokenColorCustomizations": {
         "[Subliminal]": {
             "textMateRules": [
@@ -208,11 +207,19 @@
         "editor.defaultFormatter": "golang.go"
     },
     "[rust]": {
-        "editor.defaultFormatter": "matklad.rust-analyzer"
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
-    "C_Cpp.updateChannel": "Insiders",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[cc]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
     "cmake.configureOnOpen": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
     "jest.autoEnable": false,
     "polacode.transparentBackground": true,
     "prettier.prettierPath": "node_modules/prettier",
@@ -237,19 +244,24 @@
     "todo-tree.tree.showScanModeButton": false,
     "search.searchOnType": false,
     "liveshare.authenticationProvider": "GitHub",
-    "C_Cpp.intelliSenseEngine": "Disabled",
     "editor.colorDecorators": false,
     "prettier.tabWidth": 4,
     "editor.formatOnSave": true,
     "editor.accessibilitySupport": "off",
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
-    },
     "editor.inlineSuggest.enabled": true,
     "redhat.telemetry.enabled": true,
     "terminal.integrated.env.osx": {
         "FIG_NEW_SESSION": "1"
     },
     "workbench.panel.defaultLocation": "right",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    },
+    "rust.clippy_preference": "on",
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "go.toolsManagement.autoUpdate": true,
     "window.zoomLevel": 1
 }
