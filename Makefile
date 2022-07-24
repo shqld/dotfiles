@@ -91,3 +91,5 @@ setup.keyrepeat: ## Enable key repeating in vscode https://github.com/VSCodeVim/
 
 setup.rust: ## Init rustup
 	@rustup-init -y
+	@rustup component add rls rust-analysis rust-src
+
