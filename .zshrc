@@ -151,3 +151,9 @@ RPROMPT='${vcs_info_msg_0_}'
 # fzf 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+# gcloud
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sho/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sho/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sho/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sho/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
