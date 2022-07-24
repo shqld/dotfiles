@@ -39,6 +39,8 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
+alias cat='bat'
+
 alias pbp='pbpaste'
 alias pbc='pbcopy'
 
