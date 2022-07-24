@@ -21,6 +21,7 @@ export PATH=$HOME/ghq/github.com/kamatama41/tfenv/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
 export PATH=$HOME/ghq/chromium.googlesource.com/chromium/tools/depot_tools:$PATH
+export PATH=$(brew --prefix llvm)/bin:$PATH
 
 # source /opt/lucet/bin/devenv_setenv.sh
 
