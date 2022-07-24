@@ -49,7 +49,7 @@ alias qurl='docker run -it --rm ymuski/curl-http3 curl'
 alias tf='terraform'
 
 ## projects/v8
-alias gm=$HOME/projects/v8/tools/dev/gm.py
+alias gm=$HOME/ghq/chromium.googlesource.com/v8/v8/tools/dev/gm.py
 
 # =====================================================
 # ENVIRONMENT VARIABLES
