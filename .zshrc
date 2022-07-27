@@ -64,6 +64,7 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export EDITOR=/usr/bin/vim
+export NODE_OPTIONS='--enable-source-maps --trace-warnings'
 
 
 # INITIALIZE
