@@ -137,10 +137,12 @@
     },
     {
         "key": "cmd+j",
-        "command": "workbench.action.toggleAuxiliaryBar"
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
     },
     {
-        "key": "cmd+j",
-        "command": "-workbench.action.togglePanel"
-    }
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
 ]
