@@ -12,6 +12,7 @@ export PATH=/opt/homebrew/sbin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.zsh/funcs:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH 
