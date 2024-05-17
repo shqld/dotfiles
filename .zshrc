@@ -38,7 +38,7 @@ alias up='cd ..'
 
 alias nn='nnn'
 
-alias ls='exa'
+alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
