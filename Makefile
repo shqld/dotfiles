@@ -1,7 +1,7 @@
 # Copyright (c) 2021- shqld All Rights Reserved.
 # https://github.com/shqld/dotfiles/blob/master/Makefile
 
-XARGS           := xargs -P$(shell nproc)
+XARGS           := xargs
 
 DOTPATH         := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES      := $(wildcard .??*) Library
