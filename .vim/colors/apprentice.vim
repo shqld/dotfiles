@@ -1,1 +1,1 @@
-../../.submodules/Apprentice/colors/apprentice.vim
+../../downloads/Apprentice/colors/apprentice.vim

@@ -1,1 +1,1 @@
-../../.submodules/vim-plug/plug.vim
+../../downloads/vim-plug/plug.vim
