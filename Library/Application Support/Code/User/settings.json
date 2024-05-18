@@ -264,5 +264,6 @@
     "rust-analyzer.checkOnSave.command": "clippy",
     "go.toolsManagement.autoUpdate": true,
     "window.zoomLevel": 1,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Hack Nerd Font'"
 }
