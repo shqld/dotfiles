@@ -235,7 +235,6 @@
     "files.watcherExclude": {
         "**/*.snap": true
     },
-    "workbench.activityBar.visible": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.renderWhitespace": "none",
     "vim.textwidth": 60,
