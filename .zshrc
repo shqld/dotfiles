@@ -87,6 +87,7 @@ eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
 # cargo
+mkdir -p $HOME/.cargo
 source "$HOME/.cargo/env"
 
 # fzf 
