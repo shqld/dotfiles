@@ -83,11 +83,8 @@ setup.chsh: install ## Change default shell for the current user to zsh
 	@grep -q $(shell which zsh) /etc/shells || echo $(shell which zsh) | sudo tee -a /etc/shells
 	@finger $(shell whoami) | grep -q "Shell: $(shell which zsh)" || chsh -s $(shell which zsh)
 
-setup.keyrepeat: ## Enable key repeating in vscode https://github.com/VSCodeVim/Vim/blob/2da276357ddfe6fba3640b04b05113bd3e66156b/README.md#mac
-	@defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false # For VS Code
-	@defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
-	@defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false # For VS Codium
-    # @defaults delete -g ApplePressAndHoldEnabled # If necessary, reset global default
+setup.keyrepeat:
+	@defaults write -g ApplePressAndHoldEnabled -bool false
 
 setup.rust: ## Init rustup
 	@rustup-init -y
