@@ -20,6 +20,7 @@ export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
+export PATH=$HOME/dotfiles/google-cloud-sdk/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$KTROOT/bin:$PATH
 export PATH=$GHQ_ROOT/github.com/kamatama41/tfenv/bin:$PATH
@@ -95,6 +96,6 @@ source "$HOME/.cargo/env"
 
 # gcloud
 # updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/dotfiles/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/dotfiles/google-cloud-sdk/path.zsh.inc"; fi
 # enables shell command completion for gcloud.
-if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f "$HOME/dotfiles/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/dotfiles/google-cloud-sdk/completion.zsh.inc"; fi
