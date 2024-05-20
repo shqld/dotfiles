@@ -191,18 +191,7 @@
             ]
         }
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[go]": {
         "editor.defaultFormatter": "golang.go"
     },
