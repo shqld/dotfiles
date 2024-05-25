@@ -99,3 +99,11 @@ source "$HOME/.cargo/env"
 if [ -f "$HOME/dotfiles/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/dotfiles/google-cloud-sdk/path.zsh.inc"; fi
 # enables shell command completion for gcloud.
 if [ -f "$HOME/dotfiles/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/dotfiles/google-cloud-sdk/completion.zsh.inc"; fi
+
+# bun completions
+[ -s "/Users/sho/.bun/_bun" ] && source "/Users/sho/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
