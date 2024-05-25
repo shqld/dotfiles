@@ -253,5 +253,7 @@
     "go.toolsManagement.autoUpdate": true,
     "window.zoomLevel": 1,
     "workbench.sideBar.location": "right",
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Hack Nerd Font'"
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Hack Nerd Font'",
+    "githubPullRequests.terminalLinksHandler": "github",
+    "github.copilot.editor.enableAutoCompletions": true
 }
