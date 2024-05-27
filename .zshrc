@@ -53,6 +53,8 @@ alias qurl='docker run -it --rm ymuski/curl-http3 curl'
 
 alias tf='terraform'
 
+alias pn='pnpm'
+
 ## projects/v8
 alias gm=$GHQ_ROOT/chromium.googlesource.com/v8/v8/tools/dev/gm.py
 
